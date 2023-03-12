@@ -1,5 +1,7 @@
 package pl.kurs.employeeservice.domain;
 
+import java.util.Objects;
+
 public class Employee {
 
     private String name;
@@ -28,6 +30,19 @@ public class Employee {
 
     public String getCity() {
         return city;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Double.compare(employee.salary, salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(pesel, employee.pesel) && Objects.equals(position, employee.position) && Objects.equals(city, employee.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, pesel, salary, position, city);
     }
 
     @Override
