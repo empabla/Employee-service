@@ -1,6 +1,7 @@
 package pl.kurs.employeeservice.services;
 
 import pl.kurs.employeeservice.domain.Employee;
+import pl.kurs.employeeservice.exceptions.EmployeeNotFoundException;
 
 import java.util.*;
 import java.util.stream.Collectors;
